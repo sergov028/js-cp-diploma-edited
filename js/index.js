@@ -1,3 +1,5 @@
+localStorage.clear();
+
 document.addEventListener("DOMContentLoaded", () => {
   const dayList = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
 
@@ -32,8 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     data.films = response.films.result;
     data.halls = response.halls.result.filter((hall) => hall.hall_open == 1);
     data.seances = response.seances.result;
-    console.log(data.seances);
-
+    //console.log(data.seances);
     const main = document.querySelector("main"); //Создаем основной контент страницы
 
     data.films.forEach((film) => {
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
             seance.seance_hallid == hall.hall_id &&
             seance.seance_filmid == film.film_id
         );
-        console.log(seances);
+        //console.log(seances);
 
         if (seances.length > 0) {
           seancesHtml += `
@@ -105,10 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     );
 
-    const movieSeances = document.querySelectorAll(".movie-seances__time"); //Определяем начало сеанса для каждого дня
+    const movieSeances = document.querySelectorAll(".movie-seances__time");
 
     function changeSeances(timeStampDay) {
       movieSeances.forEach((movieSeance) => {
+        //Определяем начало сеанса для каждого дня
         const timeStampSeanceDay = Number(movieSeance.dataset.seanceStart) * 60;
         const timeStampSeance = timeStampDay + timeStampSeanceDay;
         const timeStampNow = timeStampToday / 1000;
@@ -128,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         selectSeance.hallConfig = data.find(
           (hall) => hall.hall_id == selectSeance.hallId
         ).hall_config;
-        sessionStorage.setItem("selectSeance", JSON.stringify(selectSeance));
+        localStorage.setItem("selectSeance", JSON.stringify(selectSeance));
       })
     );
   });
