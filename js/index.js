@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     data.films = response.films.result;
     data.halls = response.halls.result.filter((hall) => hall.hall_open == 1);
     data.seances = response.seances.result;
-    //console.log(data.seances);
+    //console.log(data);
     const main = document.querySelector("main"); //Создаем основной контент страницы
 
     data.films.forEach((film) => {
@@ -126,8 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     movieSeances.forEach((movieSeance) =>
       movieSeance.addEventListener("click", (event) => {
-        let selectSeance = event.target.dataset; //Сохраняем данные о сеансах в локальное хранилище
-        selectSeance.hallConfig = data.find(
+        const selectSeance = event.target.dataset;
+        selectSeance.hallConfig = data.halls.find(
           (hall) => hall.hall_id == selectSeance.hallId
         ).hall_config;
         localStorage.setItem("selectSeance", JSON.stringify(selectSeance));
