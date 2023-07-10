@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     data.films = response.films.result;
     data.halls = response.halls.result.filter((hall) => hall.hall_open == 1);
     data.seances = response.seances.result;
-    //console.log(data);
     const main = document.querySelector("main"); //Создаем основной контент страницы
 
     data.films.forEach((film) => {
@@ -46,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
             seance.seance_hallid == hall.hall_id &&
             seance.seance_filmid == film.film_id
         );
-        //console.log(seances);
 
         if (seances.length > 0) {
           seancesHtml += `
