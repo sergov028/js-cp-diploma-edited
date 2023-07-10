@@ -28,6 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const qr = QRCreator(textQR, { image: "SVG" }); //Создаем QR
 
-  //qr.download();
   document.querySelector(".ticket__info-qr").append(qr.result); //Добавляем готовый QR на страницу
 });
