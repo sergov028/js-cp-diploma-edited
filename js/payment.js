@@ -1,7 +1,5 @@
 const selectSeance = JSON.parse(localStorage.getItem("selectSeance"));
 
-console.log(selectSeance);
-
 document.addEventListener("DOMContentLoaded", () => {
   //Данные билета о фильме
   //
