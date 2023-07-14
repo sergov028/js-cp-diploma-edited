@@ -25,7 +25,7 @@ body {
   margin: 0;
   font-weight: 900;
   font-size: 3.4rem;
-  color: #FFFFFF;
+  color: #ffffff;
   text-transform: uppercase;
 }
 .page-header__title span {
@@ -57,37 +57,39 @@ body {
   margin-left: 1px;
 }
 .page-nav .page-nav__day .page-nav__day-week::after {
-  content: ',';
+  content: ",";
 }
 .page-nav .page-nav__day .page-nav__day-number::before {
-  content: ' ';
+  content: " ";
 }
-.page-nav .page-nav__day .page-nav__day-week, .page-nav .page-nav__day .page-nav__day-number {
+.page-nav .page-nav__day .page-nav__day-week,
+.page-nav .page-nav__day .page-nav__day-number {
   display: block;
 }
 .page-nav .page-nav__day_chosen {
   flex-grow: 1;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   font-weight: 700;
   transform: scale(1.1);
 }
 .page-nav .page-nav__day_weekend {
-  color: #DE2121;
+  color: #de2121;
 }
 .page-nav .page-nav__day_next {
   text-align: center;
 }
 .page-nav .page-nav__day_next::before {
-  content: '>';
+  content: ">";
   font-family: monospace;
   font-weight: 700;
   font-size: 2.4rem;
 }
 .page-nav .page-nav__day_today .page-nav__day-week::before {
-  content: 'Сегодня';
+  content: "Сегодня";
   display: block;
 }
-.page-nav .page-nav__day_today .page-nav__day-week, .page-nav .page-nav__day_today .page-nav__day-number {
+.page-nav .page-nav__day_today .page-nav__day-week,
+.page-nav .page-nav__day_today .page-nav__day-number {
   display: inline;
 }
 
@@ -115,7 +117,7 @@ body {
   height: 17.5rem;
 }
 .movie .movie__poster::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   right: -0.7rem;
@@ -165,10 +167,54 @@ body {
   padding: 8px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
   border-radius: 2px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #000000;
   text-decoration: none;
   font-size: 1.5rem;
+}
+
+/* ---Adaptive--- */
+
+@media screen and (max-width: 478px) {
+  .page-nav {
+    flex-wrap: wrap;
+  }
+
+  .page-nav .page-nav__day + .page-nav__day {
+    margin-left: 1rem;
+  }
+
+  .movie .movie__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movie .movie__poster {
+    position: relative;
+    margin: auto;
+    height: auto;
+  }
+
+  .movie .movie__poster .movie__poster-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .movie .movie__description {
+    flex-grow: 1;
+    margin-bottom: 2rem;
+  }
+
+  .movie .movie-seances__hall + .movie-seances__hall {
+    margin-top: 1rem;
+  }
+
+  .movie
+    .movie-seances__hall
+    .movie-seances__time-block:nth-last-of-type(n + 1) {
+    margin-right: 2rem;
+  }
 }
 
 /* ~~~~~~~~~~~~ Кинозал ~~~~~~~~~~~~ */
@@ -182,8 +228,8 @@ body {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.4rem;
-  background-color: #16A6AF;
-  color: #FFFFFF;
+  background-color: #16a6af;
+  color: #ffffff;
 }
 
 .buying {
@@ -200,7 +246,8 @@ body {
 .buying__info .buying__info-description {
   padding-right: 1.5rem;
 }
-.buying__info .buying__info-title, .buying__info .buying__info-hall {
+.buying__info .buying__info-title,
+.buying__info .buying__info-hall {
   font-size: 1.6rem;
   font-weight: 700;
 }
@@ -220,7 +267,7 @@ body {
   width: 10rem;
 }
 .buying__info .buying__info-hint p::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -1rem;
   top: calc(50% - 1.6rem);
@@ -233,7 +280,7 @@ body {
 
 .conf-step {
   text-align: center;
-  background-color: #171D24;
+  background-color: #171d24;
   padding: 1.5rem 3rem 1.5rem;
 }
 
@@ -247,7 +294,7 @@ body {
   padding-top: 3rem;
 }
 .conf-step__wrapper::before {
-  content: '';
+  content: "";
 }
 
 .conf-step__row + .conf-step__row {
@@ -272,11 +319,11 @@ body {
 }
 
 .conf-step__chair_standart {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .conf-step__chair_vip {
-  background-color: #F9953A;
+  background-color: #f9953a;
 }
 
 .conf-step__chair_taken {
@@ -284,8 +331,8 @@ body {
 }
 
 .conf-step__chair_selected {
-  background-color: #25C4CE;
-  box-shadow: 0px 0px 4px #16A6AF;
+  background-color: #25c4ce;
+  box-shadow: 0px 0px 4px #16a6af;
   transform: scale(1.2);
 }
 
@@ -293,7 +340,7 @@ body {
   padding-top: 3rem;
   font-size: 1.4rem;
   font-weight: 300;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   flex-wrap: nowrap;
   text-align: left;
@@ -313,7 +360,8 @@ body {
 }
 
 /* ~~~~~~~~~~~~ Билет ~~~~~~~~~~~~ */
-.tichet__check, .ticket__info-wrapper {
+.tichet__check,
+.ticket__info-wrapper {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   background-color: rgba(241, 235, 230, 0.95);
@@ -325,7 +373,7 @@ body {
   padding-bottom: 2.5rem;
 }
 .tichet__check::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: -3px;
@@ -336,7 +384,7 @@ body {
   background-size: 10px 3px;
 }
 .tichet__check::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: -3px;
@@ -354,7 +402,7 @@ body {
   padding-bottom: 3rem;
 }
 .ticket__info-wrapper::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: -3px;
@@ -365,7 +413,7 @@ body {
   background-size: 10px 3px;
 }
 .ticket__info-wrapper::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: -3px;
@@ -380,7 +428,7 @@ body {
   font-weight: 700;
   font-size: 2.2rem;
   text-transform: uppercase;
-  color: #C76F00;
+  color: #c76f00;
 }
 
 .ticket__info {
@@ -417,12 +465,15 @@ body {
   }
 }
 @media screen and (min-width: 990px) {
-  .page-header, nav, main {
+  .page-header,
+  nav,
+  main {
     width: 990px;
     margin: auto;
   }
 
-  .movie, .buying {
+  .movie,
+  .buying {
     border-radius: 2px;
   }
 
@@ -434,13 +485,11 @@ body {
 /*================================================================*/
 
 .movie .movie-seances__hall .acceptin-button-disabled {
- background-color: #888888;
- pointer-events: none
+  background-color: #888888;
+  pointer-events: none;
 }
 
 .acceptin-button:disabled {
   background-color: #888888;
-  pointer-events: none
- }
-
-
+  pointer-events: none;
+}
